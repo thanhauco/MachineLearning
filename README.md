@@ -1,1 +1,1 @@
-A repo for some machine learning practice
+A repo for some machine learning practices with fraud detection algos.
