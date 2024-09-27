@@ -24,6 +24,9 @@ wine_data = pd.concat([red_wine, white_wine], axis=0)
 X = wine_data.drop(columns=['quality'])  # All columns except 'quality' are features
 y = wine_data['quality']  # 'quality' is the target variable
 
+# Normalize the target labels to start from 0 (fix for XGBoost)
+y = y - y.min()
+
 # Split the dataset into training (80%) and testing (20%) sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
